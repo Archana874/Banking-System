@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  background: #f5f7fb;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.page-shell {
+  padding: 22px 0;
+}
+
+.bank-card {
+  max-width: 900px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.bank-card-header {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  color: #fff !important;
+  padding: 0.8rem 1rem;
+}
+
+.bank-card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.bank-card-body {
+  padding: 1rem;
+  background: #fff;
+}
+
+.bank-form .form-label {
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.45rem;
+}
+
+.bank-form .form-control {
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 0.72rem 0.9rem;
+}
+
+.bank-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.btn-bank {
+  background: linear-gradient(90deg, #0d6efd, #0b5ed7);
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.btn-bank:hover {
+  background: linear-gradient(90deg, #0b5ed7, #0a58ca);
+  color: #fff !important;
+}
+
+.bank-table thead th {
+  background: #0f172a;
+  color: #fff;
+}
+
+.bank-table td,
+.bank-table th {
+  vertical-align: middle;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
