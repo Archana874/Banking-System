@@ -207,7 +207,6 @@ GET /customers/transactions?accountNumber={accountNumber}
 
 **Archana K R**
 
-Java Developer | Spring Boot | React | MySQL
 
 ---
 
