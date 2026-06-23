@@ -29,9 +29,15 @@ function CreateCustomer() {
         alert("Customer Created Successfully");
         navigate("/");
       })
-      .catch((error) => {
-        console.log(error);
-      });
+     .catch((error) => {
+
+    if(error.response && error.response.data) {
+        alert(error.response.data);
+    } else {
+        alert("Customer creation failed");
+    }
+
+});
   };
 
   return (

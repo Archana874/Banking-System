@@ -3,8 +3,8 @@ import axios from "axios";
 
 function Transfer() {
 
-  const [fromId, setFromId] = useState("");
-  const [toId, setToId] = useState("");
+  const [fromAccountNumber, setFromAccountNumber] = useState("");
+  const [toAccountNumber, setToAccountNumber] = useState("");
   const [amount, setAmount] = useState("");
 
   const handleTransfer = async (e) => {
@@ -13,8 +13,8 @@ function Transfer() {
     try {
 
       const response = await axios.post(
-        `http://localhost:8080/customers/transfer?fromId=${fromId}&toId=${toId}&amount=${amount}`
-      );
+  `http://localhost:8080/customers/transfer?fromAccount=${fromAccountNumber}&toAccount=${toAccountNumber}&amount=${amount}`
+);
 
       alert(response.data);
 
@@ -36,22 +36,22 @@ function Transfer() {
         <div className="card-body bank-card-body">
           <form className="bank-form" onSubmit={handleTransfer}>
             <div className="mb-3">
-              <label className="form-label">Sender Customer ID</label>
+              <label className="form-label">Sender Account Number</label>
               <input
                 type="number"
                 className="form-control"
-                value={fromId}
-                onChange={(e) => setFromId(e.target.value)}
+                value={fromAccountNumber}
+                onChange={(e) => setFromAccountNumber(e.target.value)}
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Receiver Customer ID</label>
+              <label className="form-label">Receiver Account Number</label>
               <input
                 type="number"
                 className="form-control"
-                value={toId}
-                onChange={(e) => setToId(e.target.value)}
+                value={toAccountNumber}
+                onChange={(e) => setToAccountNumber(e.target.value)}
               />
             </div>
 

@@ -3,16 +3,16 @@ import axios from "axios";
 
 function Withdraw() {
 
-  const [id, setId] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
   const [amount, setAmount] = useState("");
 
   const handleWithdraw = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `http://localhost:8080/customers/withdraw/${id}?amount=${amount}`
-      );
+     const response = await axios.post(
+  `http://localhost:8080/customers/withdraw?accountNumber=${accountNumber}&amount=${amount}`
+);
 
       alert("Withdraw Successful");
       console.log(response.data);
@@ -33,12 +33,12 @@ function Withdraw() {
         <div className="card-body bank-card-body">
           <form className="bank-form" onSubmit={handleWithdraw}>
             <div className="mb-3">
-              <label className="form-label">Customer ID</label>
+              <label className="form-label">Account Number</label>
               <input
                 type="number"
                 className="form-control"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
+                value={accountNumber}
+                onChange={(e) => setAccountNumber(e.target.value)}
               />
             </div>
 

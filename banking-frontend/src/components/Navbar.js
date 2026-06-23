@@ -34,6 +34,9 @@ function Navbar() {
           <Link className="nav-link text-white" to="/transactions">
             Transactions
           </Link>
+          <Link className="nav-link text-white" to="/balance">
+            Check Balance
+          </Link>
 
         </div>
 

@@ -3,15 +3,25 @@ import { getTransactions } from "../services/CustomerService";
 
 function Transactions() {
 
-    const [customerId, setCustomerId] = useState("");
+    const [accountNumber, setAccountNumber] = useState("");
     const [transactions, setTransactions] = useState([]);
 
     const loadTransactions = () => {
 
-        getTransactions(customerId)
+        getTransactions(accountNumber)
             .then((response) => {
-                setTransactions(response.data);
-            })
+
+    if (response.data.length === 0) {
+
+        alert("No transactions found for this account");
+        setTransactions([]);
+
+    } else {
+
+        setTransactions(response.data);
+
+    }
+})
             .catch((error) => {
                 console.log(error);
             });
@@ -30,9 +40,9 @@ function Transactions() {
                         <input
                             type="number"
                             className="form-control"
-                            placeholder="Enter Customer ID"
-                            value={customerId}
-                            onChange={(e) => setCustomerId(e.target.value)}
+                            placeholder="Enter Account Number"
+                            value={accountNumber}
+                            onChange={(e) => setAccountNumber(e.target.value)}
                         />
                     </div>
 

@@ -6,6 +6,7 @@ import Deposit from "./pages/Deposit";
 import Withdraw from "./pages/Withdraw";
 import Transfer from "./pages/Transfer";
 import Transactions from "./pages/Transactions";
+import CheckBalance from "./pages/CheckBalance";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/withdraw" element={<Withdraw />} />
         <Route path="/transfer" element={<Transfer />} />
         <Route path="/transactions" element={<Transactions />} />
+        <Route path="/balance" element={<CheckBalance />} />
       </Routes>
 
     </BrowserRouter>

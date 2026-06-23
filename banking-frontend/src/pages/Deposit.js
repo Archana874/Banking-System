@@ -3,7 +3,7 @@ import axios from "axios";
 
 function Deposit() {
 
-  const [id, setId] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
   const [amount, setAmount] = useState("");
 
   const handleDeposit = async (e) => {
@@ -11,8 +11,8 @@ function Deposit() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/customers/deposit/${id}?amount=${amount}`
-      );
+  `http://localhost:8080/customers/deposit?accountNumber=${accountNumber}&amount=${amount}`
+);  
 
       alert("Deposit Successful");
       console.log(response.data);
@@ -33,12 +33,12 @@ function Deposit() {
         <div className="card-body bank-card-body">
           <form className="bank-form" onSubmit={handleDeposit}>
             <div className="mb-3">
-              <label className="form-label">Customer ID</label>
+              <label className="form-label">Account Number</label>
               <input
                 type="number"
                 className="form-control"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
+                value={accountNumber}
+                onChange={(e) => setAccountNumber(e.target.value)}
               />
             </div>
 

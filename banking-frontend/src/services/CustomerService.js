@@ -9,23 +9,28 @@ export const getCustomers = () => {
 export const createCustomer = (customer) => {
     return axios.post(API_URL, customer);
 };
-export const depositMoney = (id, amount) => {
+export const depositMoney = (accountNumber, amount) => {
     return axios.post(
-        `${API_URL}/deposit/${id}?amount=${amount}`
+        `${API_URL}/deposit?accountNumber=${accountNumber}&amount=${amount}`
     );
 };
-export const withdrawMoney = (id, amount) => {
+export const withdrawMoney = (accountNumber, amount) => {
     return axios.post(
-        `${API_URL}/withdraw/${id}?amount=${amount}`
+        `${API_URL}/withdraw?accountNumber=${accountNumber}&amount=${amount}`
     );
 };
-export const transferMoney = (fromId, toId, amount) => {
+export const transferMoney = (fromAccount, toAccount, amount) => {
     return axios.post(
-        `${API_URL}/transfer?fromId=${fromId}&toId=${toId}&amount=${amount}`
+        `${API_URL}/transfer?fromAccount=${fromAccount}&toAccount=${toAccount}&amount=${amount}`
     );
 };
-export const getTransactions = (customerId) => {
+export const getTransactions = (accountNumber) => {
     return axios.get(
-        `${API_URL}/transactions/${customerId}`
+        `${API_URL}/transactions?accountNumber=${accountNumber}`
+    );
+};
+export const checkBalance = (accountNumber) => {
+    return axios.get(
+        `${API_URL}/balance?accountNumber=${accountNumber}`
     );
 };
